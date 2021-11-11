@@ -16,6 +16,10 @@ const Header = () => {
     dispatch(logout());
     history.push("/login");
   };
+  const cart = useSelector((state) => state.cart);
+  const { cartItems } = cart;
+  const totalQty = cartItems.reduce((total, cur) => cur.qty + total, 0);
+
   return (
     <header>
       <Navbar bg="primary" variant="dark" expand="lg" collapseOnSelect>
@@ -38,6 +42,7 @@ const Header = () => {
               <LinkContainer to="/cart">
                 <Nav.Link>
                   <i className="fas fa-shopping-cart ms-1"></i> Cart
+                  <span className={classes.badge}>{totalQty}</span>
                 </Nav.Link>
               </LinkContainer>
 

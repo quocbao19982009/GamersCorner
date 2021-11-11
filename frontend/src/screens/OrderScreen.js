@@ -29,7 +29,6 @@ const OrderScreen = () => {
   const [sdkReady, setSdkReady] = useState(false);
 
   const orderId = useParams().id;
-  console.log(orderId);
   const orderDetails = useSelector((state) => state.orderDetails);
   const { order, loading, error } = orderDetails;
 
@@ -71,10 +70,8 @@ const OrderScreen = () => {
       }
     }
   }, [dispatch, orderId, successPay, order, successDeliver]);
-  console.log(order);
 
   const successPaymentHandler = (paymentResult) => {
-    console.log(paymentResult);
     dispatch(payOrder(orderId, paymentResult));
   };
 
@@ -114,7 +111,7 @@ const OrderScreen = () => {
                   <div>
                     {order.isDelivered ? (
                       <Message as="p" variant="success">
-                        Delivered at {order.deliveredAt}
+                        Delivered at {order.deliveredAt.substring(0, 10)}
                       </Message>
                     ) : (
                       <Message variant="danger">Not Delivered</Message>
@@ -131,7 +128,7 @@ const OrderScreen = () => {
                   <div>
                     {order.isPaid ? (
                       <Message variant="success">
-                        Paid on {order.paidAt}
+                        Paid on {order.paidAt.substring(0, 10)}
                       </Message>
                     ) : (
                       <Message variant="danger">Not Paid</Message>

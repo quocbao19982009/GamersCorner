@@ -1,4 +1,5 @@
 import axios from "axios";
+import { CART_RESET } from "../constants/cartConstants";
 import { PRODUCT_CREATE_REVIEW_RESET } from "../constants/productConstants";
 import {
   USER_LOGIN_REQUEST,
@@ -75,6 +76,7 @@ export const logout = () => (dispatch) => {
     type: USER_LIST_RESET,
   });
   dispatch({ type: PRODUCT_CREATE_REVIEW_RESET });
+  dispatch({ type: CART_RESET });
 };
 
 export const register = (name, email, password) => async (dispatch) => {

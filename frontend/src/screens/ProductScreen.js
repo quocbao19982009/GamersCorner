@@ -40,8 +40,6 @@ const ProductScreen = () => {
   const productDetail = useSelector((state) => state.productDetail);
 
   const { loading, product, error } = productDetail;
-  console.log("reviews", product.reviews);
-  console.log("name", product.name);
 
   const reviewProduct = useSelector((state) => state.reviewProduct);
 
@@ -87,9 +85,6 @@ const ProductScreen = () => {
       })
     );
   };
-  // const product = products.find((p) => p._id === productId);
-  // console.log(product);
-  // console.log(productId);
 
   return (
     <>

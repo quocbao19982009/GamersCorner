@@ -17,7 +17,6 @@ import { USER_UPDATE_RESET } from "../constants/userConstants";
 
 const UserEditScreen = () => {
   const userId = useParams().id;
-  console.log(useParams());
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [isAdmin, setIsAdmin] = useState(false);
@@ -38,7 +37,6 @@ const UserEditScreen = () => {
     success: successUpdate,
   } = userUpdate;
 
-  console.log(user);
   useEffect(() => {
     if (successUpdate) {
       dispatch({ type: USER_UPDATE_RESET });
@@ -50,7 +48,6 @@ const UserEditScreen = () => {
         setName(user.name);
         setEmail(user.email);
         setIsAdmin(user.isAdmin);
-        console.log("this step run");
       }
     }
   }, [userId, user, successUpdate, dispatch, history]);

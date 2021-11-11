@@ -27,6 +27,7 @@ const ProductListScreen = () => {
     success: successCreate,
     loading: loadingCreate,
     error: errorCreate,
+    product: createdProduct,
   } = createProductData;
 
   const deteleProductData = useSelector((state) => state.deteleProduct);
@@ -36,7 +37,6 @@ const ProductListScreen = () => {
     error: errorDelete,
   } = deteleProductData;
 
-  console.log(deteleProductData);
   let isLogin;
   if (!userInfo) {
     isLogin = false;
@@ -48,14 +48,14 @@ const ProductListScreen = () => {
       type: PRODUCT_CREATE_RESET,
     });
 
-    if (successCreate) {
-      history.push(`/admin/product/${createProductData.product._id}/edit`);
+    if (isLogin && !userInfo.isAdmin) {
+      history.push("/login");
     }
 
-    if (isLogin && userInfo.isAdmin) {
-      dispatch(listProducts("", pageNumber));
+    if (successCreate) {
+      history.push(`/admin/product/${createdProduct._id}/edit`);
     } else {
-      history.push("/login");
+      dispatch(listProducts("", pageNumber));
     }
   }, [
     dispatch,
@@ -65,11 +65,10 @@ const ProductListScreen = () => {
     successDelete,
     successCreate,
     pageNumber,
-    createProductData.product._id,
+    createdProduct,
   ]);
 
   const deleteHandler = (id) => {
-    console.log(deteleProductData);
     if (window.confirm("Are you sure?")) {
       dispatch(deleteProduct(id));
     }

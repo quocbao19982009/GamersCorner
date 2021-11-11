@@ -21,6 +21,7 @@ import {
 } from "../constants/orderConstants";
 
 import axios from "axios";
+import { CART_RESET } from "../constants/cartConstants";
 
 export const createOrder = (order) => async (dispatch, getState) => {
   try {
@@ -120,6 +121,7 @@ export const payOrder =
         type: ORDER_PAY_SUCCESS,
         payload: data,
       });
+      dispatch({ type: CART_RESET });
     } catch (error) {
       dispatch({
         type: ORDER_PAY_FAIL,

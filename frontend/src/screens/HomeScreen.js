@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-
 import { listProducts } from "../actions/productActions";
 import { Col, Row } from "react-bootstrap";
 import Product from "../components/Product";
@@ -58,23 +57,3 @@ const HomeScreen = () => {
 };
 
 export default HomeScreen;
-
-// Fetching data using Fetch()
-// useEffect(() => {
-//   const fetchProduct = async function () {
-//     try {
-//       const respone = await fetch("/api/product/");
-//       // This has to change poxy in package.json so it will look into localhost:5000 instead of 3000
-//       if (!respone.ok) {
-//         throw new Error("Request Fail");
-//       }
-//       const data = await respone.json();
-
-//       setProducts(data);
-//     } catch (err) {
-//       console.log(err);
-//     }
-//   };
-
-//   fetchProduct();
-// }, []);

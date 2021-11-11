@@ -25,7 +25,7 @@ const SearchBox = () => {
         aria-label="Search"
         className={`me-sm-2 ms-sm-5 ${classes.searchBox}`}
       ></FormControl>
-      <Button type="submit" variant="secondary" className="btn-block">
+      <Button type="submit" variant="info" className="btn-block">
         Search
       </Button>
     </Form>

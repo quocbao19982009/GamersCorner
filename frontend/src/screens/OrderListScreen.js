@@ -17,8 +17,6 @@ const OrderListScreen = () => {
   const orderList = useSelector((state) => state.orderList);
   const { orders, error, loading } = orderList;
 
-  console.log(orders);
-
   let isLogin;
 
   if (!userInfo) {
@@ -74,7 +72,7 @@ const OrderListScreen = () => {
                 </td>
                 <td>
                   <LinkContainer to={`/orders/${order._id}`}>
-                    <Button variant="light" className="btn-sm">
+                    <Button variant="light" className="btn-sm d-grid">
                       Details
                     </Button>
                   </LinkContainer>

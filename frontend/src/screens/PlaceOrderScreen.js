@@ -21,9 +21,11 @@ const PlaceOrderScreen = () => {
   const { cartItems, shippingAddress, paymentMethod } = cart;
 
   // Calculated Prices
-  cart.itemsPrice = cart.cartItems.reduce((acc, cur) => {
-    return acc + cur.price * cur.qty;
-  }, 0);
+  cart.itemsPrice = cart.cartItems
+    .reduce((acc, cur) => {
+      return acc + cur.price * cur.qty;
+    }, 0)
+    .toFixed(2);
 
   cart.shippingPrice = cart.itemsPrice > 100 ? 0 : cart.itemsPrice * 0.2;
 
@@ -38,8 +40,6 @@ const PlaceOrderScreen = () => {
   const orderCreate = useSelector((state) => state.orderCreate);
 
   const { error, order, success } = orderCreate;
-
-  // console.log(order._id);
 
   useEffect(() => {
     if (success) {
@@ -129,7 +129,7 @@ const PlaceOrderScreen = () => {
               <ListGroupItem>
                 <Row>
                   <Col>Items Price</Col>
-                  <Col>$ {cart.itemsPrice.toFixed(2)}</Col>
+                  <Col>$ {cart.itemsPrice}</Col>
                 </Row>
               </ListGroupItem>
 
