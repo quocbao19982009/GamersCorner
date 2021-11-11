@@ -14,6 +14,7 @@ This is a eCommerce React app for games gears shoping
 - Admin's mangager function (Add/Remove products, view all details of orders and users)
 - Mark deliver order
 - Checkout process (shipping, payment method,...)
+- Cart, Authenication, shipping address is save in local storage
 
 ## Technologies
 
@@ -21,6 +22,7 @@ This is a eCommerce React app for games gears shoping
 - ExpressJS
 - MongoDB
 - NodeJS
+- Redux
 - Bootstrap5
 - CSS Module
 
