@@ -17,17 +17,20 @@ import { createOrder } from "../actions/orderAction";
 const PlaceOrderScreen = () => {
   const dispatch = useDispatch();
   const history = useHistory();
+
   const cart = useSelector((state) => state.cart);
   const { cartItems, shippingAddress, paymentMethod } = cart;
 
   // Calculated Prices
-  cart.itemsPrice = cart.cartItems
-    .reduce((acc, cur) => {
+  cart.itemsPrice = Number(
+    cartItems.reduce((acc, cur) => {
       return acc + cur.price * cur.qty;
     }, 0)
-    .toFixed(2);
+  );
 
-  cart.shippingPrice = cart.itemsPrice > 100 ? 0 : cart.itemsPrice * 0.2;
+  cart.shippingPrice = Number(
+    cart.itemsPrice > 100 ? 0 : (cart.itemsPrice * 0.2).toFixed(2)
+  );
 
   cart.taxPrice = Number((cart.itemsPrice * 0.15).toFixed(2));
 

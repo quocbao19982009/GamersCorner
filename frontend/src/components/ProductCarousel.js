@@ -5,6 +5,7 @@ import { Carousel, Image } from "react-bootstrap";
 import Loader from "./Loader";
 import Message from "./Message";
 import { listTopProducts } from "../actions/productActions";
+import classes from "./ProductCarousel.module.css";
 
 const ProductCarousel = () => {
   const dispatch = useDispatch();
@@ -20,7 +21,7 @@ const ProductCarousel = () => {
       {loading && <Loader></Loader>}
       {error && <Message variant="danger">{error}</Message>}
       {!loading && !error && (
-        <Carousel pause="hover" className="bg-secondary">
+        <Carousel pause="hover" className={`bg-secondary ${classes.carousel}`}>
           {products.map((product) => (
             <Carousel.Item key={product._id}>
               <Link to={`/product/${product._id}`}>
@@ -32,7 +33,7 @@ const ProductCarousel = () => {
                 ></Image>
                 <Carousel.Caption className="carousel-caption">
                   <h2>
-                    {product.name}({product.price})
+                    {product.name} (${product.price})
                   </h2>
                 </Carousel.Caption>
               </Link>

@@ -28,12 +28,13 @@ const HomeScreen = () => {
   return (
     <>
       <Meta></Meta>
+      <h2 className="py-3">POPULAR PRODUCTS</h2>
       {!keyword ? (
         <ProductCarousel></ProductCarousel>
       ) : (
         <Link to="/">Go Back</Link>
       )}
-      <h2 className="py-3">LASTEST PRODUCT</h2>
+      <h2 className=" mt-5">LASTEST PRODUCTS</h2>
       {loading && <Loader />}
       {error && <Message variant="danger">{error}</Message>}
       {!error && (
