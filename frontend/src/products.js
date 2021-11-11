@@ -66,7 +66,7 @@ const products = [
   },
   {
     _id: "6",
-    name: "ASUS - TUF 27”",
+    name: "ASUS - TUF 27” HDR FullHD",
     image: "/images/monitor.jpg",
     description:
       "Enjoy a smooth gaming experience with this 27-inch ASUS Full HD monitor. The Shadow Boost feature increases clarity in dark scenes, and the ultrafast response times minimize blurring and streaking for seamless gameplay. This ASUS Full HD monitor has an ergonomic design that allows tilting, swiveling and pivoting as needed.",
