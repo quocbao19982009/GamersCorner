@@ -1,0 +1,29 @@
+.product {
+  padding: 3rem;
+}
+.rating {
+  padding: 1rem 2rem;
+}
+.price {
+  padding: 1rem 2rem;
+  font-size: 2rem;
+}
+.description {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+}
+.image {
+  min-width: 100%;
+}
+@media (max-width: 1200px) {
+  .info {
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
+
+@media (min-width: 922px) and (max-width: 1200px) {
+  .colDescription {
+    width: 50%;
+  }
+}

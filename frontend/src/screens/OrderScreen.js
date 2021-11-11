@@ -13,7 +13,7 @@ import { PayPalButton } from "react-paypal-button-v2";
 import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
-import { Link, useHistory, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import {
   getOrderDetails,
   payOrder,
@@ -25,7 +25,6 @@ import {
 } from "../constants/orderConstants";
 const OrderScreen = () => {
   const dispatch = useDispatch();
-  const history = useHistory();
 
   const [sdkReady, setSdkReady] = useState(false);
 

@@ -1,16 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link, useLocation, useHistory, useParams } from "react-router-dom";
-import {
-  Form,
-  Button,
-  Row,
-  Col,
-  FormGroup,
-  FormLabel,
-  FormControl,
-  FormCheck,
-} from "react-bootstrap";
+import { Link, useHistory, useParams } from "react-router-dom";
+import { Form, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
@@ -32,8 +23,6 @@ const ProductEditScreen = () => {
   const [description, setDescription] = useState("");
   const [uploading, setUploading] = useState(false);
 
-  const location = useLocation();
-
   const dispatch = useDispatch();
 
   const history = useHistory();
@@ -46,7 +35,6 @@ const ProductEditScreen = () => {
 
   const {
     loading: loadingUpdate,
-    product: productUpdate,
     error: errorUpdate,
     success: successUpdate,
   } = updateProductData;
@@ -61,7 +49,7 @@ const ProductEditScreen = () => {
       });
       history.push("/admin/productlist");
     } else {
-      if (!product.name || productId != product._id || successUpdate) {
+      if (!product.name || productId !== product._id || successUpdate) {
         dispatch(listProductDetails(productId));
       } else {
         setName(product.name);
@@ -73,7 +61,7 @@ const ProductEditScreen = () => {
         setDescription(product.description);
       }
     }
-  }, [dispatch, productId, product, successUpdate]);
+  }, [dispatch, productId, product, successUpdate, history]);
 
   const submitHandler = (e) => {
     e.preventDefault();

@@ -25,7 +25,7 @@ const PlaceOrderScreen = () => {
     return acc + cur.price * cur.qty;
   }, 0);
 
-  cart.shippingPrice = cart.itemsPrice > 100 ? 0 : cart.itemsPrice * 0.5;
+  cart.shippingPrice = cart.itemsPrice > 100 ? 0 : cart.itemsPrice * 0.2;
 
   cart.taxPrice = Number((cart.itemsPrice * 0.15).toFixed(2));
 

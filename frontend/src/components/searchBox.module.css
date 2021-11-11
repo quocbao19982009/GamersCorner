@@ -1,0 +1,10 @@
+@media (max-width: 992px) {
+  .box {
+    margin: 0.75rem 0;
+  }
+}
+@media (min-width: 1200px) {
+  .searchBox {
+    width: 20rem;
+  }
+}

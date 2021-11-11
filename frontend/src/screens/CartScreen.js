@@ -11,6 +11,7 @@ import {
   Card,
   ListGroupItem,
 } from "react-bootstrap";
+import classes from "./CartScreen.module.css";
 import Message from "../components/Message";
 import { addToCart, removeFromCart } from "../actions/cartActions";
 
@@ -53,10 +54,11 @@ const CartScreen = () => {
         {cartItems.length > 0 && (
           <ListGroup variant="flush">
             {cartItems.map((item) => (
-              <ListGroupItem key={item.product}>
+              <ListGroupItem key={item.product} className={classes.product}>
                 <Row>
                   <Col md={2}>
                     <Image
+                      className={classes.image}
                       src={item.image}
                       alt={item.name}
                       fluid
@@ -97,7 +99,7 @@ const CartScreen = () => {
           </ListGroup>
         )}
       </Col>
-      <Col md={4}>
+      <Col md={4} className={classes.total}>
         <Card>
           <ListGroup variant="flush">
             <ListGroupItem>

@@ -16,7 +16,7 @@ import Message from "../components/Message";
 import Loader from "../components/Loader";
 import { updateUserProfile, getUserDetails } from "../actions/userActions";
 import { listMyOrder } from "../actions/orderAction";
-import { red } from "colors";
+
 const ProfileScreen = () => {
   const [name, setName] = useState("");
 

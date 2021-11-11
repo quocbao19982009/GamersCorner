@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation, useHistory, useParams } from "react-router-dom";
+import { Link, useHistory, useParams } from "react-router-dom";
 import {
   Form,
   Button,
-  Row,
-  Col,
   FormGroup,
   FormLabel,
   FormControl,
@@ -24,15 +22,13 @@ const UserEditScreen = () => {
   const [email, setEmail] = useState("");
   const [isAdmin, setIsAdmin] = useState(false);
 
-  const location = useLocation();
-
   const dispatch = useDispatch();
 
   const history = useHistory();
 
   const userDetails = useSelector((state) => state.userDetails);
 
-  const { loading, error, user } = userDetails;
+  const { user } = userDetails;
 
   const userUpdate = useSelector((state) => state.userUpdate);
 
@@ -57,7 +53,7 @@ const UserEditScreen = () => {
         console.log("this step run");
       }
     }
-  }, [userId, user, successUpdate]);
+  }, [userId, user, successUpdate, dispatch, history]);
 
   const submitHandler = (e) => {
     e.preventDefault();

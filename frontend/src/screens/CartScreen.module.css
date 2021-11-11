@@ -1,0 +1,11 @@
+@media (max-width: 992px) {
+  .image {
+    width: 100%;
+  }
+  .product {
+    margin-top: 1rem;
+  }
+}
+.total {
+  margin-top: 4.5rem;
+}

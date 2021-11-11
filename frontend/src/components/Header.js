@@ -1,4 +1,5 @@
 import React from "react";
+import classes from "./header.module.css";
 import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
@@ -9,7 +10,6 @@ import SearchBox from "./SearchBox";
 const Header = () => {
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
-  const isAdmin = userInfo ? userInfo.admin : false;
   const dispatch = useDispatch();
   const history = useHistory();
   const logoutHandler = () => {
@@ -18,15 +18,18 @@ const Header = () => {
   };
   return (
     <header>
-      <Navbar bg="dark" variant="dark " expand="lg" collapseOnSelect>
+      <Navbar bg="primary" variant="dark" expand="lg" collapseOnSelect>
         <Container>
           <LinkContainer to="/">
-            <Navbar.Brand>ProShop</Navbar.Brand>
+            <Navbar.Brand className="pe-5 me-5">Gamer's Corner</Navbar.Brand>
           </LinkContainer>
 
           <Navbar.Toggle aria-controls="navbarScroll" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <SearchBox />
+          <Navbar.Collapse
+            className={classes.navbar}
+            id="responsive-navbar-nav"
+          >
+            <SearchBox className={classes.searchBar} />
             <Nav
               className="ms-auto"
               // style={{ maxHeight: "100px" }}

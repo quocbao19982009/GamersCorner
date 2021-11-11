@@ -49,7 +49,7 @@ const ProductListScreen = () => {
     });
 
     if (successCreate) {
-      history.push(`/admin/product/${createProductData.product._id}`);
+      history.push(`/admin/product/${createProductData.product._id}/edit`);
     }
 
     if (isLogin && userInfo.isAdmin) {
@@ -65,6 +65,7 @@ const ProductListScreen = () => {
     successDelete,
     successCreate,
     pageNumber,
+    createProductData.product._id,
   ]);
 
   const deleteHandler = (id) => {

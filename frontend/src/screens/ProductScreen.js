@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import classes from "./ProductScreen.module.css";
 import {
   listProductDetails,
   createProductReview,
@@ -44,11 +45,7 @@ const ProductScreen = () => {
 
   const reviewProduct = useSelector((state) => state.reviewProduct);
 
-  const {
-    loading: loadingReview,
-    success: successReview,
-    error: errorReview,
-  } = reviewProduct;
+  const { success: successReview, error: errorReview } = reviewProduct;
 
   const userLogin = useSelector((state) => state.userLogin);
 
@@ -96,7 +93,7 @@ const ProductScreen = () => {
 
   return (
     <>
-      <Link className="btn btn-light py-3" to="/">
+      <Link className="btn btn-light mb-3" to="/">
         Go Back
       </Link>
       {loading && <Loader></Loader>}
@@ -106,24 +103,32 @@ const ProductScreen = () => {
           <Meta title={product.name}></Meta>
           <Row>
             <Col md={6}>
-              <Image src={product.image} alt={product.name} fluid></Image>
+              <Image
+                className={`img-fluid ${classes.image}`}
+                src={product.image}
+                alt={product.name}
+              ></Image>
             </Col>
-            <Col md={3}>
+            <Col md={6} lg={3} className={classes.colDescription}>
               <ListGroup variant="flush">
                 <ListGroupItem>
                   <h3>{product.name}</h3>
                 </ListGroupItem>
-                <ListGroupItem>
+                <ListGroupItem className={classes.rating}>
                   <Rating
                     value={product.rating}
-                    text={`${product.numReviews} Reviews`}
+                    text={` ${product.numReviews} Reviews`}
                   ></Rating>
                 </ListGroupItem>
-                <ListGroupItem>${product.price}</ListGroupItem>
-                <ListGroupItem>{product.description}</ListGroupItem>
+                <ListGroupItem className={classes.price}>
+                  $ {product.price}
+                </ListGroupItem>
+                <ListGroupItem className={classes.description}>
+                  {product.description}
+                </ListGroupItem>
               </ListGroup>
             </Col>
-            <Col md={3}>
+            <Col md={3} className={classes.info}>
               <ListGroupItem>
                 <Row>
                   <Col>Price:</Col>
