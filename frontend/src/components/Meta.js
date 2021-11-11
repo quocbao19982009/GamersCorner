@@ -11,9 +11,9 @@ const Meta = ({ title, description, keywords }) => {
 };
 
 Meta.defaultProps = {
-  title: "Welcome to Proshop Yeb",
-  description: "Best CHeap you will ever find",
-  keywords: "good, cheap, reliable",
+  title: "Welcome to Gamer's Corner",
+  description: "Gaming good for the right price",
+  keywords: "good, cheap, reliable, gamer",
 };
 
 export default Meta;
