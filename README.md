@@ -1,11 +1,16 @@
 # Gamer's Corner eCommerce App
 
-This project was built with MERN stack & Redux.
-Live Site: https://gamerscornerapp.herokuapp.com/
+<img src="https://github.com/quocbao19982009/GamersCorner/blob/main/gamer'scorner.png" alt="gamer's corner" />
+
+
 
 ## General Infomation
 
-This is a eCommerce React app for games gears shoping
+An E-commerce application where users can browse and make purchases with items. This is a collaboration project in which Bao Nguyen is the main front-end developer. The project was made with MERN Stack Bootstrap 5, Redux, Paypal integration.
+
+The main aim of the project is to practice and learn a full-function e-commerce site using React Js.
+
+Demo: https://gamerscornerapp.herokuapp.com/
 
 ## Features
 
